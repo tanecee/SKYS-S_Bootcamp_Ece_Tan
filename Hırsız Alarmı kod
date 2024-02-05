@@ -1,0 +1,23 @@
+int buzzer=6;
+int pir=5;
+int deger=0;
+void setup()
+{
+  pinMode(6, OUTPUT);
+  pinMode(5, INPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  deger=digitalRead(pir);
+  if(deger==HIGH){
+  tone(buzzer,500);
+  Serial.println("Hirsiz var");
+   delay(1000);
+  }
+  else{
+  noTone(buzzer);
+  delay(1000);
+  }
+}
